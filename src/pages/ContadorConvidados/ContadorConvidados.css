@@ -1,0 +1,204 @@
+.contador-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.contador-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contador-page__subtitle {
+  color: var(--color-text-light);
+  margin: var(--spacing-xs) 0 0;
+}
+
+.contador-page__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Indicador de progresso (reuso do padrão da Cerimônia) */
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.progress-indicator__text {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  color: var(--color-text-light);
+}
+
+.progress-indicator__bar {
+  width: 120px;
+  height: 10px;
+  background-color: var(--color-primary-light);
+  border: 2px solid var(--color-text);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-indicator__fill {
+  height: 100%;
+  background-color: var(--color-success);
+  transition: width var(--transition-normal);
+}
+
+.progress-indicator.is-over .progress-indicator__bar {
+  border-color: var(--color-error);
+}
+
+.progress-indicator.is-over .progress-indicator__fill {
+  background-color: var(--color-error);
+}
+
+.progress-indicator__extra {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  margin-left: 6px;
+  border: 2px solid var(--color-error);
+  border-radius: var(--border-radius);
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+}
+
+.contador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.contador__value {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-primary);
+  text-shadow: 4px 4px 0 var(--color-primary-light);
+}
+
+.contador__exceed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border: 2px solid var(--color-error);
+  border-radius: var(--border-radius);
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+}
+
+.contador__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 520px;
+}
+
+.contador__row {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: auto;
+}
+
+.contador__row--primary .btn--large {
+  min-height: 64px;
+  font-size: var(--font-size-sm);
+}
+
+.contador__empty {
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.contador__history {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contador__history-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.contador__history-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  padding: 4px 8px;
+  border: 2px solid var(--color-text);
+  border-radius: var(--border-radius);
+  background-color: var(--color-background);
+  font-family: var(--font-display);
+}
+
+.contador__history-badge.is-inc {
+  border-color: var(--color-success);
+  background-color: var(--color-success-bg);
+}
+
+.contador__history-badge.is-dec {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.contador__history-time {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .contador-page__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .contador-page__actions {
+    margin-top: var(--spacing-xs);
+  }
+
+  .contador__value {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contador__exceed {
+    margin-top: -4px;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contador__row--primary .btn--large {
+    min-height: 56px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+  }
+
+  .progress-indicator__bar {
+    width: 160px;
+  }
+}
+.contador__row--secondary {
+  margin-bottom: var(--spacing-md);
+}

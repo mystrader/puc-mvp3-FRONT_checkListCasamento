@@ -1,0 +1,258 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Header */
+.dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.dashboard__breadcrumb {
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dashboard__back-button {
+  /* usar estilos do Button + ajustes de layout */
+  margin-left: -4px;
+}
+
+.dashboard__export-button {
+  margin-left: 4px;
+}
+
+.dashboard__title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-xs);
+}
+
+.dashboard__subtitle {
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* Ilustração Pixel Art dos Noivos */
+.dashboard__couple-art {
+  flex-shrink: 0;
+}
+
+.pixel-couple {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.pixel-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pixel-head {
+  width: 20px;
+  height: 20px;
+  background-color: #ffd5c2;
+  border: 2px solid var(--color-text);
+  border-radius: 2px;
+}
+
+.pixel-body {
+  width: 24px;
+  height: 32px;
+  border: 2px solid var(--color-text);
+  border-radius: 2px;
+  margin-top: -2px;
+}
+
+.pixel-groom .pixel-body {
+  background-color: #4a4a4a;
+}
+
+.pixel-groom .pixel-head::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 6px;
+  background-color: #3d3d3d;
+  margin: -2px auto 0;
+  border-radius: 2px 2px 0 0;
+}
+
+.pixel-bride .pixel-body {
+  background-color: #fff;
+  width: 28px;
+  height: 36px;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.pixel-bride .pixel-head::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: -8px auto 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.pixel-heart {
+  font-size: 1rem;
+  color: var(--color-primary);
+  animation: pixelBounce 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+/* Wedding Info */
+.wedding-summary {
+  text-align: center;
+}
+
+.wedding-summary__names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.wedding-summary__names h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  margin: 0;
+}
+
+.wedding-summary__heart {
+  font-size: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.wedding-summary__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md) var(--spacing-lg);
+}
+
+.wedding-summary__details p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* Cards Grid */
+.dashboard__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.dashboard__card-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.dashboard__card-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.dashboard__card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard__card-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xs);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.dashboard__card-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* Stats */
+.dashboard__section-title {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.dashboard__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.stat-item__value {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary-dark);
+}
+
+.stat-item__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-xs);
+}
+
+/* Responsivo - Tablet */
+@media (max-width: 900px) {
+  .dashboard__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wedding-summary__details {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Responsivo - Mobile */
+@media (max-width: 640px) {
+  .dashboard {
+    gap: var(--spacing-lg);
+  }
+
+  .dashboard__breadcrumb {
+    margin-bottom: var(--spacing-md);
+    justify-content: center;
+  }
+
+  .dashboard__title {
+    font-size: var(--font-size-lg);
+  }
+
+  .dashboard__cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .pixel-couple {
+    transform: scale(0.8);
+  }
+}

@@ -1,0 +1,37 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__main {
+  flex: 1;
+  padding: var(--spacing-lg) 0;
+}
+
+.layout__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.layout__footer {
+  padding: var(--spacing-md);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  color: var(--color-text-muted);
+  border-top: 2px dashed var(--color-primary-light);
+  background-color: var(--color-surface);
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .layout__main {
+    padding: var(--spacing-md) 0;
+  }
+
+  .layout__container {
+    padding: 0 var(--spacing-sm);
+  }
+}

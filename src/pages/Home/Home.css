@@ -1,0 +1,227 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Header */
+.home-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.home-page__title-area h1 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-xs);
+}
+
+.home-page__subtitle {
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* Ilustração Pixel Art */
+.home-page__illustration {
+  flex-shrink: 0;
+}
+
+.pixel-rings {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+.pixel-ring {
+  animation: pixelBounce 1.5s ease-in-out infinite;
+}
+
+.pixel-ring:last-child {
+  animation-delay: 0.3s;
+}
+
+.pixel-heart {
+  color: var(--color-primary);
+  font-size: 1rem;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Estatísticas */
+.home-page__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.stat-box--success {
+  border-color: var(--color-success);
+  background-color: var(--color-success-bg);
+}
+
+.stat-box--warning {
+  border-color: var(--color-warning);
+  background-color: var(--color-warning-bg);
+}
+
+.stat-box__value {
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  color: var(--color-text);
+}
+
+.stat-box__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-xs);
+}
+
+/* Lista de casamentos */
+.home-page__list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.home-page__list-header h2 {
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+/* Cards de casamento */
+.wedding-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.wedding-card {
+  cursor: pointer;
+}
+
+.wedding-card__content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.wedding-card__avatar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 1.75rem;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+.wedding-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.wedding-card__names {
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.wedding-card__date,
+.wedding-card__location {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.wedding-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-sm);
+}
+
+.wedding-card__guests {
+  text-align: right;
+}
+
+.wedding-card__guests-confirmed {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-success);
+}
+
+.wedding-card__guests-total {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.wedding-card__progress {
+  height: 4px;
+  background-color: var(--color-background);
+  border-radius: 2px;
+  margin-top: var(--spacing-md);
+  overflow: hidden;
+}
+
+.wedding-card__progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-success) 100%);
+  transition: width var(--transition-normal);
+}
+
+/* Responsivo - Tablet */
+@media (max-width: 900px) {
+  .home-page__header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Responsivo - Mobile */
+@media (max-width: 640px) {
+  .home-page__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .stat-box__value {
+    font-size: var(--font-size-xl);
+  }
+
+  .wedding-card__content {
+    flex-wrap: wrap;
+  }
+
+  .wedding-card__meta {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: var(--spacing-sm);
+  }
+
+  .wedding-card__guests {
+    text-align: left;
+  }
+}

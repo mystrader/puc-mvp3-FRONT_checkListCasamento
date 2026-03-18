@@ -1,0 +1,160 @@
+{
+  "casamentos": [
+    {
+      "id": 1,
+      "noiva": {
+        "nome": "Maria Clara Santos",
+        "celular": "(11) 99876-5432",
+        "email": "mariaclara@email.com"
+      },
+      "noivo": {
+        "nome": "João Pedro Oliveira",
+        "celular": "(11) 98765-4321",
+        "email": "joaopedro@email.com"
+      },
+      "data": "2025-03-15",
+      "horarioCerimonia": "16:00",
+      "horarioRecepcao": "18:00",
+      "local": {
+        "nome": "Espaço Villa Rosa",
+        "endereco": "Rua das Flores, 1000 - Jardim Primavera",
+        "cidade": "São Paulo - SP",
+        "cep": "04567-890"
+      },
+      "status": "confirmado",
+      "totalConvidados": 150,
+      "convidadosConfirmados": 128
+    },
+    {
+      "id": 2,
+      "noiva": {
+        "nome": "Ana Beatriz Lima",
+        "celular": "(21) 99123-4567",
+        "email": "anabeatriz@email.com"
+      },
+      "noivo": {
+        "nome": "Lucas Ferreira Costa",
+        "celular": "(21) 98234-5678",
+        "email": "lucasferreira@email.com"
+      },
+      "data": "2025-05-20",
+      "horarioCerimonia": "17:00",
+      "horarioRecepcao": "19:30",
+      "local": {
+        "nome": "Fazenda Boa Vista",
+        "endereco": "Estrada do Campo, 500",
+        "cidade": "Petrópolis - RJ",
+        "cep": "25680-120"
+      },
+      "status": "pendente",
+      "totalConvidados": 200,
+      "convidadosConfirmados": 85
+    },
+    {
+      "id": 3,
+      "noiva": {
+        "nome": "Camila Rodrigues",
+        "celular": "(31) 99456-7890",
+        "email": "camila.r@email.com"
+      },
+      "noivo": {
+        "nome": "Thiago Almeida",
+        "celular": "(31) 98567-8901",
+        "email": "thiago.almeida@email.com"
+      },
+      "data": "2025-08-10",
+      "horarioCerimonia": "15:30",
+      "horarioRecepcao": "18:00",
+      "local": {
+        "nome": "Igreja São José + Buffet Estrela",
+        "endereco": "Av. Principal, 200",
+        "cidade": "Belo Horizonte - MG",
+        "cep": "30140-000"
+      },
+      "status": "pendente",
+      "totalConvidados": 180,
+      "convidadosConfirmados": 0
+    }
+  ],
+  "casamento": {
+    "id": 1,
+    "noiva": {
+      "nome": "Maria Clara Santos",
+      "celular": "(11) 99876-5432",
+      "email": "mariaclara@email.com"
+    },
+    "noivo": {
+      "nome": "João Pedro Oliveira",
+      "celular": "(11) 98765-4321",
+      "email": "joaopedro@email.com"
+    },
+    "data": "2025-03-15",
+    "horarioCerimonia": "16:00",
+    "horarioRecepcao": "18:00",
+    "local": {
+      "nome": "Espaço Villa Rosa",
+      "endereco": "Rua das Flores, 1000 - Jardim Primavera",
+      "cidade": "São Paulo - SP",
+      "cep": "04567-890"
+    },
+    "status": "confirmado",
+    "totalConvidados": 150,
+    "convidadosConfirmados": 128
+  },
+  "convidados": [
+    { "id": 1, "nome": "Ana Silva", "telefone": "(11) 91234-5678", "confirmado": true, "acompanhantes": 1, "mesa": 3 },
+    { "id": 2, "nome": "Carlos Mendes", "telefone": "(11) 92345-6789", "confirmado": true, "acompanhantes": 2, "mesa": 5 },
+    { "id": 3, "nome": "Beatriz Costa", "telefone": "(11) 93456-7890", "confirmado": false, "acompanhantes": 0, "mesa": null },
+    { "id": 4, "nome": "Ricardo Souza", "telefone": "(11) 94567-8901", "confirmado": true, "acompanhantes": 1, "mesa": 7 },
+    { "id": 5, "nome": "Fernanda Lima", "telefone": "(11) 95678-9012", "confirmado": true, "acompanhantes": 3, "mesa": 2 },
+    { "id": 6, "nome": "Paulo Roberto", "telefone": "(11) 96789-0123", "confirmado": false, "acompanhantes": 1, "mesa": null },
+    { "id": 7, "nome": "Juliana Martins", "telefone": "(11) 97890-1234", "confirmado": true, "acompanhantes": 0, "mesa": 4 },
+    { "id": 8, "nome": "Marcos Pereira", "telefone": "(11) 98901-2345", "confirmado": true, "acompanhantes": 2, "mesa": 6 }
+  ],
+  "cerimonia": {
+    "checklistItems": [
+      { "id": 1, "item": "Alianças", "descricao": "Par de alianças de ouro 18k", "concluido": true, "responsavel": "Padrinho João" },
+      { "id": 2, "item": "Porta-alianças", "descricao": "Almofada bordada personalizada", "concluido": true, "responsavel": "Florista" },
+      { "id": 3, "item": "Buquê da noiva", "descricao": "Rosas brancas e eucalipto", "concluido": true, "responsavel": "Florista" },
+      { "id": 4, "item": "Decoração do altar", "descricao": "Arranjos florais e véu", "concluido": false, "responsavel": "Decorador" },
+      { "id": 5, "item": "Som e microfone", "descricao": "Equipamento para cerimônia", "concluido": true, "responsavel": "Técnico de som" },
+      { "id": 6, "item": "Tapete vermelho", "descricao": "15 metros de extensão", "concluido": false, "responsavel": "Cerimonialista" },
+      { "id": 7, "item": "Autorização início", "descricao": "Confirmar com celebrante", "concluido": false, "responsavel": "Cerimonialista" },
+      { "id": 8, "item": "Votos personalizados", "descricao": "Textos dos noivos revisados", "concluido": true, "responsavel": "Noivos" }
+    ],
+    "musicas": [
+      { "id": 1, "momento": "Entrada das madrinhas", "musica": "Canon in D - Pachelbel", "duracao": "3:00" },
+      { "id": 2, "momento": "Entrada da noiva", "musica": "A Thousand Years - Christina Perri", "duracao": "4:45" },
+      { "id": 3, "momento": "Troca de alianças", "musica": "Perfect - Ed Sheeran", "duracao": "4:23" },
+      { "id": 4, "momento": "Assinatura", "musica": "Marry Me - Train", "duracao": "3:24" },
+      { "id": 5, "momento": "Saída dos noivos", "musica": "Viva la Vida - Coldplay", "duracao": "4:02" }
+    ]
+  },
+  "recepcao": {
+    "cronograma": [
+      { "id": 1, "horario": "18:00", "atividade": "Recepção dos convidados", "duracao": "30min", "status": "pendente" },
+      { "id": 2, "horario": "18:30", "atividade": "Entrada dos noivos", "duracao": "15min", "status": "pendente" },
+      { "id": 3, "horario": "18:45", "atividade": "Primeira dança", "duracao": "5min", "status": "pendente" },
+      { "id": 4, "horario": "19:00", "atividade": "Jantar servido", "duracao": "90min", "status": "pendente" },
+      { "id": 5, "horario": "20:30", "atividade": "Corte do bolo", "duracao": "15min", "status": "pendente" },
+      { "id": 6, "horario": "21:00", "atividade": "Hora do buquê", "duracao": "10min", "status": "pendente" },
+      { "id": 7, "horario": "21:15", "atividade": "Hora da gravata", "duracao": "10min", "status": "pendente" },
+      { "id": 8, "horario": "21:30", "atividade": "Banda/DJ - Pista livre", "duracao": "180min", "status": "pendente" },
+      { "id": 9, "horario": "00:30", "atividade": "Encerramento", "duracao": "30min", "status": "pendente" }
+    ],
+    "fornecedores": {
+      "buffet": { "nome": "Buffet Sabor & Arte", "contato": "(11) 3456-7890", "confirmado": true },
+      "bandaDj": { "nome": "Banda Som da Festa", "contato": "(11) 4567-8901", "confirmado": true },
+      "fotografo": { "nome": "Studio Click Perfeito", "contato": "(11) 5678-9012", "confirmado": true },
+      "decoracao": { "nome": "Flores & Sonhos", "contato": "(11) 6789-0123", "confirmado": false }
+    }
+  },
+  "dashboard": {
+    "cards": [
+      { "id": "casamento", "titulo": "Casamento", "icone": "rings", "status": "confirmado", "info": "15 de Março de 2025" },
+      { "id": "convidados", "titulo": "Convidados", "icone": "users", "status": "pendente", "info": "128 de 150 confirmados" },
+      { "id": "cerimonia", "titulo": "Cerimônia", "icone": "church", "status": "pendente", "info": "5 de 8 itens prontos" },
+      { "id": "recepcao", "titulo": "Recepção", "icone": "party", "status": "confirmado", "info": "Cronograma definido" }
+    ]
+  }
+}

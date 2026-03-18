@@ -1,0 +1,245 @@
+.cerimonia-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.cerimonia-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.cerimonia-page__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cerimonia-page__subtitle {
+  color: var(--color-text-light);
+  margin: var(--spacing-xs) 0 0;
+}
+
+.cerimonia-page__content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Progress Indicator */
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.progress-indicator__text {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  color: var(--color-text-light);
+}
+
+.progress-indicator__bar {
+  width: 80px;
+  height: 8px;
+  background-color: var(--color-primary-light);
+  border: 2px solid var(--color-text);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-indicator__fill {
+  height: 100%;
+  background-color: var(--color-success);
+  transition: width var(--transition-normal);
+}
+
+/* Checklist */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.checklist__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: var(--color-background);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-fast);
+}
+
+.checklist__item.is-completed {
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success);
+}
+
+.checklist__item.is-completed .checklist__name {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.checklist__toggle {
+  flex-shrink: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.checklist__checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-text);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--color-success);
+  transition: all var(--transition-fast);
+}
+
+.checklist__toggle:hover .checklist__checkbox {
+  background-color: var(--color-primary-light);
+}
+
+.checklist__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.checklist__name {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.checklist__description {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+.checklist__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-xs);
+}
+
+.checklist__responsible {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Music List */
+.music-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.music-list__item {
+  list-style: none;
+}
+
+.music-list__button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: var(--spacing-sm);
+  background-color: var(--color-background);
+  border: 2px solid var(--color-secondary-light);
+  border-radius: var(--border-radius);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.music-list__button:hover {
+  background-color: var(--color-secondary-light);
+  border-color: var(--color-secondary);
+  transform: translateX(4px);
+}
+
+.music-list__moment {
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  color: var(--color-secondary-dark);
+  text-transform: uppercase;
+}
+
+.music-list__song {
+  font-weight: 600;
+}
+
+.music-list__duration {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Music Detail Modal */
+.music-detail {
+  text-align: center;
+}
+
+.music-detail__icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.music-detail__moment {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary-dark);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.music-detail__song {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.music-detail__duration {
+  color: var(--color-text-light);
+  margin: 0 0 var(--spacing-lg);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .cerimonia-page__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cerimonia-page__header {
+    flex-direction: column;
+  }
+
+  .checklist__item {
+    flex-wrap: wrap;
+  }
+
+  .checklist__meta {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: var(--spacing-xs);
+  }
+
+  .progress-indicator {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

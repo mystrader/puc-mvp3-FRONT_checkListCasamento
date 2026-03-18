@@ -1,0 +1,78 @@
+/* Paleta de cores - Tema romântico suave */
+:root {
+  /* Cores principais */
+  --color-primary: #e8a4b8;
+  --color-primary-dark: #d4889e;
+  --color-primary-light: #f5d5de;
+  
+  /* Cores secundárias */
+  --color-secondary: #b8a4e8;
+  --color-secondary-dark: #9e88d4;
+  --color-secondary-light: #d5c9f5;
+  
+  /* Cores de destaque */
+  --color-accent: #f0c987;
+  --color-accent-dark: #d4a84f;
+  
+  /* Cores neutras */
+  --color-background: #fef9f7;
+  --color-surface: #ffffff;
+  --color-text: #4a3f47;
+  --color-text-light: #7a6d75;
+  --color-text-muted: #9e9199;
+  
+  /* Cores de estado */
+  --color-success: #8bc9a3;
+  --color-success-bg: #e8f5ed;
+  --color-warning: #f5c76b;
+  --color-warning-bg: #fef5e0;
+  --color-error: #e88a8a;
+  --color-error-bg: #fde8e8;
+  --color-info: #8ab4e8;
+  --color-info-bg: #e8f1fd;
+  
+  /* Sombras pixel art (bordas sólidas) */
+  --shadow-pixel: 4px 4px 0px rgba(74, 63, 71, 0.15);
+  --shadow-pixel-hover: 6px 6px 0px rgba(74, 63, 71, 0.2);
+  --shadow-pixel-active: 2px 2px 0px rgba(74, 63, 71, 0.15);
+  
+  /* Bordas */
+  --border-pixel: 3px solid var(--color-text);
+  --border-light: 2px solid var(--color-primary-light);
+  --border-radius: 4px;
+  
+  /* Espaçamentos */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Tipografia */
+  --font-display: 'Press Start 2P', cursive;
+  --font-body: 'Nunito', sans-serif;
+  
+  --font-size-xs: 0.65rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  
+  /* Transições */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  
+  /* Z-index layers */
+  --z-dropdown: 100;
+  --z-modal: 200;
+  --z-tooltip: 300;
+  --z-toast: 400;
+}
+
+/* Breakpoints para referência:
+   Mobile: até 640px
+   Tablet: 641px - 1024px
+   Desktop: 1025px+
+*/
