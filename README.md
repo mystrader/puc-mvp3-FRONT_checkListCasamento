@@ -1,3 +1,7 @@
+
+<img width="736" height="188" alt="banner_frontend" src="https://github.com/user-attachments/assets/12c47636-4c9f-414a-b796-970b27d43860" />
+
+
 # Frontend React - Checklist Casamento
 
 Interface React do MVP da PUC-Rio para gestão de casamentos. Este módulo consome a API Flask própria, substitui a antiga persistência em `localStorage` por chamadas HTTP e integra a API ViaCEP no formulário de endereço do casal.
