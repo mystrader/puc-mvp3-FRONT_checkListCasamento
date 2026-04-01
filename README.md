@@ -24,6 +24,8 @@ A interface ficará disponível em [http://localhost:5173](http://localhost:5173
 
 Em desenvolvimento (`npm run dev`), as chamadas vão para o mesmo host do Vite e são encaminhadas a `http://127.0.0.1:5001` (use `VITE_PROXY_TARGET` se a API estiver em outra URL). Evite definir `VITE_API_BASE_URL` só para dev — isso faria o browser chamar a API direto e exigiria CORS. No build de produção, use `VITE_API_BASE_URL` ou o fallback `http://localhost:5001`.
 
+**Service Worker:** em `npm run dev` o SW **não é registrado** (e registros antigos são removidos), para evitar cache que obrigue F5 após mudanças. Em build de produção o `sw.js` usa **rede primeiro** (HTML/JS sempre atualizados; API nunca vem de cache). Para desativar o SW mesmo em produção, defina no `.env`: `VITE_DISABLE_SW=true`.
+
 ## Fluxograma da arquitetura
 
 Fluxograma do frontend

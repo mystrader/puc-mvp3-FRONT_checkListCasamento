@@ -1,7 +1,33 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, Button, StatusBadge, Loader, ErrorMessage, EmptyState, Tooltip } from '../../components';
-import { useWeddingData } from '../../hooks';
+import { Card, Button, StatusBadge, Loader, ErrorMessage, EmptyState, Tooltip, Toast } from '../../components';
+import { useWeddingData, useToast } from '../../hooks';
+import { deleteWedding } from '../../services/api';
 import './Home.css';
+
+function IconTrashOutlined({ className }) {
+  return (
+    <svg
+      className={className}
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path d="M3 6h18" />
+      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+      <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <line x1="10" y1="11" x2="10" y2="17" />
+      <line x1="14" y1="11" x2="14" y2="17" />
+    </svg>
+  );
+}
 
 /**
  * Página inicial - Lista de Casamentos
@@ -10,6 +36,31 @@ import './Home.css';
 function Home() {
   const navigate = useNavigate();
   const { data, loading, error, refetch } = useWeddingData('casamentos');
+  const { toast, success, error: showError, hideToast } = useToast();
+  const [deletingId, setDeletingId] = useState(null);
+  const [optimisticRemoved, setOptimisticRemoved] = useState(() => new Set());
+
+  const handleDelete = async (e, casamento) => {
+    e.stopPropagation();
+    if (
+      !window.confirm(
+        `Excluir o casamento de ${casamento.noiva.nome.split(' ')[0]} e ${casamento.noivo.nome.split(' ')[0]}? Esta ação não pode ser desfeita.`,
+      )
+    ) {
+      return;
+    }
+    setDeletingId(casamento.id);
+    try {
+      await deleteWedding(casamento.id);
+      setOptimisticRemoved((prev) => new Set(prev).add(casamento.id));
+      success('Casamento removido.');
+      refetch();
+    } catch (err) {
+      showError(err.message);
+    } finally {
+      setDeletingId(null);
+    }
+  };
 
   if (loading) {
     return <Loader text="Carregando casamentos..." />;
@@ -19,7 +70,7 @@ function Home() {
     return <ErrorMessage onRetry={refetch} />;
   }
 
-  const casamentos = data || [];
+  const casamentos = (data || []).filter((c) => !optimisticRemoved.has(c.id));
 
   return (
     <div className="home-page animate-fade-in">
@@ -65,8 +116,8 @@ function Home() {
       <section className="home-page__list">
         <div className="home-page__list-header">
           <h2>Próximos Eventos</h2>
-          <Tooltip content="Funcionalidade futura">
-            <Button variant="primary" size="small" disabled>
+          <Tooltip content="Cadastrar novo evento">
+            <Button variant="primary" size="small" onClick={() => navigate('/casamento/novo')}>
               + Novo Casamento
             </Button>
           </Tooltip>
@@ -78,7 +129,7 @@ function Home() {
             title="Nenhum casamento cadastrado"
             description="Comece cadastrando o primeiro evento."
             action={
-              <Button variant="primary" disabled>
+              <Button variant="primary" onClick={() => navigate('/casamento/novo')}>
                 + Cadastrar Casamento
               </Button>
             }
@@ -115,6 +166,25 @@ function Home() {
                   </div>
 
                   <div className="wedding-card__meta">
+                    <Tooltip content="Excluir casamento">
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="small"
+                        className="wedding-card__delete"
+                        disabled={deletingId === casamento.id}
+                        onClick={(e) => handleDelete(e, casamento)}
+                        aria-label="Excluir casamento"
+                      >
+                        {deletingId === casamento.id ? (
+                          <span className="wedding-card__delete-spinner" aria-hidden>
+                            …
+                          </span>
+                        ) : (
+                          <IconTrashOutlined className="wedding-card__delete-icon" />
+                        )}
+                      </Button>
+                    </Tooltip>
                     <StatusBadge status={casamento.status} />
                     <div className="wedding-card__guests">
                       <span className="wedding-card__guests-confirmed">
@@ -140,6 +210,8 @@ function Home() {
           </div>
         )}
       </section>
+
+      <Toast message={toast.message} type={toast.type} isVisible={toast.isVisible} onClose={hideToast} />
     </div>
   );
 }

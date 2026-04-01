@@ -16,7 +16,7 @@ function Layout() {
         </div>
       </main>
       <footer className="layout__footer">
-        <p>💕 Wedding Ceremony System © 2025</p>
+        <p>💕 Wedding Ceremony System © 2026</p>
       </footer>
     </div>
   );

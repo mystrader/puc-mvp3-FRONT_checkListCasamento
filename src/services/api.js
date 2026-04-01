@@ -33,10 +33,23 @@ export function fetchWeddingOverview(weddingId) {
   return request(`/casamentos/${weddingId}/visao-geral`);
 }
 
+export function createWedding(payload) {
+  return request('/casamentos', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+}
+
 export function updateWedding(weddingId, payload) {
   return request(`/casamentos/${weddingId}`, {
     method: 'PUT',
     body: JSON.stringify(payload),
+  });
+}
+
+export function deleteWedding(weddingId) {
+  return request(`/casamentos/${weddingId}`, {
+    method: 'DELETE',
   });
 }
 

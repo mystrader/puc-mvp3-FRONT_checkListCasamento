@@ -5,6 +5,7 @@ export { default as ConvidadoDetalhe } from './ConvidadoDetalhe';
 export { default as Dashboard } from './Dashboard';
 export { default as ExportarPlanejamento } from './Exportacao/Planejamento';
 export { default as Home } from './Home';
+export { default as NovoCasamento } from './NovoCasamento/NovoCasamento';
 export { default as NotFound } from './NotFound';
 export { default as Recepcao } from './Recepcao';
 export { default as Relatorios } from './Relatorios';

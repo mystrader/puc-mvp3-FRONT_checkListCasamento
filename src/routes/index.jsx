@@ -9,6 +9,7 @@ import {
     ExportarPlanejamento,
     Home,
     NotFound,
+    NovoCasamento,
     Recepcao,
     Relatorios,
     ContadorConvidados
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         // Página inicial - Lista de casamentos
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'casamento/novo',
+        element: <NovoCasamento />,
       },
       {
         // Dashboard do casamento (rota dinâmica com :id)
