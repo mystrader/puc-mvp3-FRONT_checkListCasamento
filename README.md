@@ -1,6 +1,4 @@
 
-<img width="736" height="188" alt="banner_frontend" src="https://github.com/user-attachments/assets/12c47636-4c9f-414a-b796-970b27d43860" />
-
 
 # Frontend React - Checklist Casamento
 
@@ -17,7 +15,7 @@ Interface React do MVP da PUC-Rio para gestão de casamentos. Este módulo conso
 ## Como executar com Docker
 
 ```bash
-cd Frontend_checkListCasamentos
+cd puc-mvp3-FRONT_checkListCasamento
 docker build -t checklist-casamento-frontend .
 docker run --rm -p 5173:80 checklist-casamento-frontend
 ```
@@ -28,9 +26,9 @@ Em desenvolvimento (`npm run dev`), as chamadas vão para o mesmo host do Vite e
 
 ## Fluxograma da arquitetura
 
-![Fluxograma do frontend](./public/arquitetura-frontend.svg)
+Fluxograma do frontend
 
-A API própria e o Swagger usam a porta **5001** por padrão: **http://localhost:5001/swagger**. O ViaCEP é chamado **direto do navegador** (não passa pelo Flask).
+A API própria e o Swagger usam a porta **5001** por padrão: **[http://localhost:5001/swagger](http://localhost:5001/swagger)**. O ViaCEP é chamado **direto do navegador** (não passa pelo Flask).
 
 ## Funcionalidades implementadas
 
