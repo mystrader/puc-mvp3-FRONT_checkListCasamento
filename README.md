@@ -28,7 +28,26 @@ Em desenvolvimento (`npm run dev`), as chamadas vão para o mesmo host do Vite e
 
 ## Fluxograma da arquitetura
 
-Fluxograma do frontend
+O desenho vetorial está em [`public/arquitetura-frontend.svg`](public/arquitetura-frontend.svg). Na **pré-visualização do Cursor/VS Code**, arquivos **SVG locais** costumam **não aparecer** no README (bloqueio de segurança); no **GitHub** o SVG e o diagrama abaixo renderizam normalmente.
+
+```mermaid
+flowchart LR
+  subgraph react [Interface React]
+    R[Vite + Router + Pages]
+  end
+  subgraph flask [API própria]
+    F[Flask REST + SQLite]
+  end
+  subgraph data [Persistência]
+    P[Casamentos e checklist]
+  end
+  V[API ViaCEP]
+  R -->|fetch| F
+  F -->|CRUD| P
+  R -->|consulta CEP HTTPS| V
+```
+
+![Fluxograma SVG — React, API Flask e ViaCEP](public/arquitetura-frontend.svg)
 
 A API própria e o Swagger usam a porta **5001** por padrão: **[http://localhost:5001/swagger](http://localhost:5001/swagger)**. O ViaCEP é chamado **direto do navegador** (não passa pelo Flask).
 
