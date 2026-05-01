@@ -4,6 +4,9 @@
 
 Interface React do MVP da PUC-Rio para gestão de casamentos. Este módulo consome a API Flask própria, substitui a antiga persistência em `localStorage` por chamadas HTTP e integra a API ViaCEP no formulário de endereço do casal.
 
+<img width="1030" height="536" alt="frontend" src="https://github.com/user-attachments/assets/8d47dbb6-cd5b-4657-8a50-543f7256a925" />
+
+
 ## Tecnologias
 
 - React 19
